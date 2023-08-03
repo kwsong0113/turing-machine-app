@@ -6,5 +6,7 @@ target 'TuringMachine' do
   use_frameworks!
 
   # Pods for TuringMachine
+  pod 'SwiftLint'
+  pod 'SwiftFormat/CLI', '~> 0.49'
 
 end

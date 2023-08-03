@@ -43,7 +43,6 @@
 				04CB4784166E4B9C3DCC71E4 /* Pods-TuringMachine.debug.xcconfig */,
 				9FB265AE9BDD7CEC2CC2F7E8 /* Pods-TuringMachine.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -100,9 +99,11 @@
 			buildConfigurationList = CAF59A5D2A7B713500813B9C /* Build configuration list for PBXNativeTarget "TuringMachine" */;
 			buildPhases = (
 				1A526E992031FFECB9E68FE1 /* [CP] Check Pods Manifest.lock */,
+				CAF59A612A7B7BC600813B9C /* SwiftFormat */,
 				CAF59A4B2A7B713400813B9C /* Sources */,
 				CAF59A4C2A7B713400813B9C /* Frameworks */,
 				CAF59A4D2A7B713400813B9C /* Resources */,
+				CAF59A602A7B7B8200813B9C /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -180,6 +181,44 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CAF59A602A7B7B8200813B9C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		CAF59A612A7B7BC600813B9C /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
