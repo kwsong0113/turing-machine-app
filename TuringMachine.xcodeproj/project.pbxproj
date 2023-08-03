@@ -75,6 +75,11 @@
 		CAF59A512A7B713400813B9C /* TuringMachine */ = {
 			isa = PBXGroup;
 			children = (
+				CAF59A6D2A7B818300813B9C /* Services */,
+				CAF59A6C2A7B816E00813B9C /* ViewModels */,
+				CAF59A6B2A7B816500813B9C /* Models */,
+				CAF59A692A7B814600813B9C /* Views */,
+				CAF59A682A7B812900813B9C /* Storage */,
 				CAF59A522A7B713400813B9C /* TuringMachineApp.swift */,
 				CAF59A542A7B713400813B9C /* ContentView.swift */,
 				CAF59A562A7B713500813B9C /* Assets.xcassets */,
@@ -89,6 +94,65 @@
 				CAF59A592A7B713500813B9C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CAF59A682A7B812900813B9C /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		CAF59A692A7B814600813B9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAF59A702A7B81AC00813B9C /* Navigation */,
+				CAF59A6F2A7B81A700813B9C /* Shared */,
+				CAF59A6E2A7B81A300813B9C /* Screens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CAF59A6B2A7B816500813B9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CAF59A6C2A7B816E00813B9C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CAF59A6D2A7B818300813B9C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CAF59A6E2A7B81A300813B9C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CAF59A6F2A7B81A700813B9C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		CAF59A702A7B81AC00813B9C /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
