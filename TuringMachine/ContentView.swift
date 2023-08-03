@@ -1,13 +1,8 @@
-//
-//  ContentView.swift
-//  TuringMachine
-//
-//  Created by 송기환 on 2023/08/03.
-//
-
+import InjectHotReload
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject private var inject = Inject.observer
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -16,6 +11,7 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .enableInjection()
     }
 }
 

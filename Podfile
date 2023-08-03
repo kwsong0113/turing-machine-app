@@ -8,5 +8,6 @@ target 'TuringMachine' do
   # Pods for TuringMachine
   pod 'SwiftLint'
   pod 'SwiftFormat/CLI', '~> 0.49'
+  pod 'InjectHotReload'
 
 end
