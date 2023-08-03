@@ -11,9 +11,13 @@
 		CAF59A552A7B713400813B9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A542A7B713400813B9C /* ContentView.swift */; };
 		CAF59A572A7B713500813B9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF59A562A7B713500813B9C /* Assets.xcassets */; };
 		CAF59A5A2A7B713500813B9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF59A592A7B713500813B9C /* Preview Assets.xcassets */; };
+		F10C8AF7971593AC1981D339 /* Pods_TuringMachine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB96405E94F89CE41C438FFB /* Pods_TuringMachine.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04CB4784166E4B9C3DCC71E4 /* Pods-TuringMachine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuringMachine.debug.xcconfig"; path = "Target Support Files/Pods-TuringMachine/Pods-TuringMachine.debug.xcconfig"; sourceTree = "<group>"; };
+		9FB265AE9BDD7CEC2CC2F7E8 /* Pods-TuringMachine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuringMachine.release.xcconfig"; path = "Target Support Files/Pods-TuringMachine/Pods-TuringMachine.release.xcconfig"; sourceTree = "<group>"; };
+		AB96405E94F89CE41C438FFB /* Pods_TuringMachine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuringMachine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF59A4F2A7B713400813B9C /* TuringMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF59A522A7B713400813B9C /* TuringMachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuringMachineApp.swift; sourceTree = "<group>"; };
 		CAF59A542A7B713400813B9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,17 +30,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F10C8AF7971593AC1981D339 /* Pods_TuringMachine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		885087DD8681A61973AC1203 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04CB4784166E4B9C3DCC71E4 /* Pods-TuringMachine.debug.xcconfig */,
+				9FB265AE9BDD7CEC2CC2F7E8 /* Pods-TuringMachine.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B84C29EFE691818628C41D94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB96405E94F89CE41C438FFB /* Pods_TuringMachine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CAF59A462A7B713400813B9C = {
 			isa = PBXGroup;
 			children = (
 				CAF59A512A7B713400813B9C /* TuringMachine */,
 				CAF59A502A7B713400813B9C /* Products */,
+				885087DD8681A61973AC1203 /* Pods */,
+				B84C29EFE691818628C41D94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +75,11 @@
 		CAF59A512A7B713400813B9C /* TuringMachine */ = {
 			isa = PBXGroup;
 			children = (
+				CAF59A6D2A7B818300813B9C /* Services */,
+				CAF59A6C2A7B816E00813B9C /* ViewModels */,
+				CAF59A6B2A7B816500813B9C /* Models */,
+				CAF59A692A7B814600813B9C /* Views */,
+				CAF59A682A7B812900813B9C /* Storage */,
 				CAF59A522A7B713400813B9C /* TuringMachineApp.swift */,
 				CAF59A542A7B713400813B9C /* ContentView.swift */,
 				CAF59A562A7B713500813B9C /* Assets.xcassets */,
@@ -67,6 +96,65 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		CAF59A682A7B812900813B9C /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		CAF59A692A7B814600813B9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAF59A702A7B81AC00813B9C /* Navigation */,
+				CAF59A6F2A7B81A700813B9C /* Shared */,
+				CAF59A6E2A7B81A300813B9C /* Screens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CAF59A6B2A7B816500813B9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CAF59A6C2A7B816E00813B9C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CAF59A6D2A7B818300813B9C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CAF59A6E2A7B81A300813B9C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CAF59A6F2A7B81A700813B9C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		CAF59A702A7B81AC00813B9C /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +162,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAF59A5D2A7B713500813B9C /* Build configuration list for PBXNativeTarget "TuringMachine" */;
 			buildPhases = (
+				1A526E992031FFECB9E68FE1 /* [CP] Check Pods Manifest.lock */,
+				CAF59A612A7B7BC600813B9C /* SwiftFormat */,
 				CAF59A4B2A7B713400813B9C /* Sources */,
 				CAF59A4C2A7B713400813B9C /* Frameworks */,
 				CAF59A4D2A7B713400813B9C /* Resources */,
+				CAF59A602A7B7B8200813B9C /* SwiftLint */,
+				C03F4EAD18206734B37DA5EF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +223,86 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A526E992031FFECB9E68FE1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TuringMachine-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C03F4EAD18206734B37DA5EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TuringMachine/Pods-TuringMachine-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TuringMachine/Pods-TuringMachine-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TuringMachine/Pods-TuringMachine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAF59A602A7B7B8200813B9C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		CAF59A612A7B7BC600813B9C /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CAF59A4B2A7B713400813B9C /* Sources */ = {
@@ -195,6 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Turing Machine";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -249,6 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Turing Machine";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -261,6 +435,7 @@
 		};
 		CAF59A5E2A7B713500813B9C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04CB4784166E4B9C3DCC71E4 /* Pods-TuringMachine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -275,11 +450,19 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"InjectHotReload\"",
+					"-Xlinker",
+					"-interposable",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kiwhan.TuringMachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -290,6 +473,7 @@
 		};
 		CAF59A5F2A7B713500813B9C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FB265AE9BDD7CEC2CC2F7E8 /* Pods-TuringMachine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -304,6 +488,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

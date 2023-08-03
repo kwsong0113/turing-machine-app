@@ -1,0 +1,24 @@
+PODS:
+  - InjectHotReload (1.2.2)
+  - SwiftFormat/CLI (0.51.13)
+  - SwiftLint (0.52.4)
+
+DEPENDENCIES:
+  - InjectHotReload
+  - SwiftFormat/CLI (~> 0.49)
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - InjectHotReload
+    - SwiftFormat
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  InjectHotReload: e524b7c46ec063d84e407e65df5fe251cde19b32
+  SwiftFormat: f4c21fdf8aacdd2db6ffe110f939e0548c9a7de3
+  SwiftLint: 1cc5cd61ba9bacb2194e340aeb47a2a37fda00b3
+
+PODFILE CHECKSUM: d96060302ff67b2d373648a7e20715724a0003b4
+
+COCOAPODS: 1.12.1
