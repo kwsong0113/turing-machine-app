@@ -13,6 +13,8 @@
 		CAF59A722A7B8B9700813B9C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A712A7B8B9700813B9C /* HomeView.swift */; };
 		CAF59A742A7B8E4900813B9C /* CTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A732A7B8E4900813B9C /* CTAButton.swift */; };
 		CAF59A762A7B90C700813B9C /* MainNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A752A7B90C700813B9C /* MainNavigation.swift */; };
+		CAF59A792A7B9DE400813B9C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A782A7B9DE400813B9C /* RegisterView.swift */; };
+		CAF59A7B2A7BA9C900813B9C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A7A2A7BA9C900813B9C /* RegisterViewModel.swift */; };
 		F10C8AF7971593AC1981D339 /* Pods_TuringMachine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB96405E94F89CE41C438FFB /* Pods_TuringMachine.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		CAF59A712A7B8B9700813B9C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CAF59A732A7B8E4900813B9C /* CTAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButton.swift; sourceTree = "<group>"; };
 		CAF59A752A7B90C700813B9C /* MainNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigation.swift; sourceTree = "<group>"; };
+		CAF59A782A7B9DE400813B9C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		CAF59A7A2A7BA9C900813B9C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 		CAF59A6C2A7B816E00813B9C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CAF59A7A2A7BA9C900813B9C /* RegisterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				CAF59A712A7B8B9700813B9C /* HomeView.swift */,
+				CAF59A782A7B9DE400813B9C /* RegisterView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -316,6 +322,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAF59A722A7B8B9700813B9C /* HomeView.swift in Sources */,
+				CAF59A7B2A7BA9C900813B9C /* RegisterViewModel.swift in Sources */,
+				CAF59A792A7B9DE400813B9C /* RegisterView.swift in Sources */,
 				CAF59A762A7B90C700813B9C /* MainNavigation.swift in Sources */,
 				CAF59A532A7B713400813B9C /* TuringMachineApp.swift in Sources */,
 				CAF59A742A7B8E4900813B9C /* CTAButton.swift in Sources */,
