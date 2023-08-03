@@ -4,7 +4,7 @@ import SwiftUI
 struct TuringMachineApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainNavigation()
         }
     }
 }
