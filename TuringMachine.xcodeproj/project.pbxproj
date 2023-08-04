@@ -21,6 +21,8 @@
 		CAF59A832A7C182200813B9C /* Serviceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A822A7C182200813B9C /* Serviceable.swift */; };
 		CAF59A852A7C187E00813B9C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A842A7C187E00813B9C /* User.swift */; };
 		CAF59A872A7C310C00813B9C /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A862A7C310C00813B9C /* Defaults.swift */; };
+		CAF59A892A7CBC1400813B9C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A882A7CBC1400813B9C /* GameView.swift */; };
+		CAF59A8B2A7CBCBC00813B9C /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A8A2A7CBCBC00813B9C /* GameStore.swift */; };
 		F10C8AF7971593AC1981D339 /* Pods_TuringMachine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB96405E94F89CE41C438FFB /* Pods_TuringMachine.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		CAF59A822A7C182200813B9C /* Serviceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serviceable.swift; sourceTree = "<group>"; };
 		CAF59A842A7C187E00813B9C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CAF59A862A7C310C00813B9C /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		CAF59A882A7CBC1400813B9C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		CAF59A8A2A7CBCBC00813B9C /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				CAF59A862A7C310C00813B9C /* Defaults.swift */,
+				CAF59A8A2A7CBCBC00813B9C /* GameStore.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			children = (
 				CAF59A712A7B8B9700813B9C /* HomeView.swift */,
 				CAF59A782A7B9DE400813B9C /* RegisterView.swift */,
+				CAF59A882A7CBC1400813B9C /* GameView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -344,12 +350,14 @@
 				CAF59A812A7C17E100813B9C /* UserService.swift in Sources */,
 				CAF59A792A7B9DE400813B9C /* RegisterView.swift in Sources */,
 				CAF59A7D2A7C0F4600813B9C /* NetworkManager.swift in Sources */,
+				CAF59A8B2A7CBCBC00813B9C /* GameStore.swift in Sources */,
 				CAF59A832A7C182200813B9C /* Serviceable.swift in Sources */,
 				CAF59A762A7B90C700813B9C /* MainNavigation.swift in Sources */,
 				CAF59A7F2A7C16F500813B9C /* APIError.swift in Sources */,
 				CAF59A532A7B713400813B9C /* TuringMachineApp.swift in Sources */,
 				CAF59A872A7C310C00813B9C /* Defaults.swift in Sources */,
 				CAF59A742A7B8E4900813B9C /* CTAButton.swift in Sources */,
+				CAF59A892A7CBC1400813B9C /* GameView.swift in Sources */,
 				CAF59A852A7C187E00813B9C /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
