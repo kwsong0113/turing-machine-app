@@ -4,6 +4,7 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject private var inject = Inject.observer
     @State private var isShowingSheet = false
+    @Default(\.username) var username
 
     var body: some View {
         VStack {
@@ -26,15 +27,21 @@ struct HomeView: View {
 
             Spacer()
             Spacer()
-            CTAButton(title: "Get Started") {
-                isShowingSheet.toggle()
+
+            CTAButton(title: username == nil ? "Get Started" : "Play") {
+                if username == nil {
+                    isShowingSheet.toggle()
+                } else {}
             }
         }
         .padding()
-        .navigationTitle("Welcome! 👋")
+        .navigationTitle(username == nil ? "Welcome!" : "Hello, \(username ?? "")!")
         .sheet(isPresented: $isShowingSheet) {
             RegisterView()
         }
+//        .fullScreenCover(isPresented: .constant(true), content: {
+//            RegisterView()
+//        })
         .enableInjection()
     }
 }

@@ -12,10 +12,8 @@ struct RegisterView: View {
     @StateObject var viewModel = RegisterViewModel()
 
     private func onSubmit() {
-        Task {
-            await viewModel.register {
-                dismiss()
-            }
+        viewModel.register {
+            dismiss()
         }
     }
 
@@ -23,6 +21,7 @@ struct RegisterView: View {
         NavigationView {
             VStack {
                 TextField("Username", text: $viewModel.username)
+                    .textInputAutocapitalization(.never)
                     .focused($focusedField, equals: .field)
                     .onAppear {
                         focusedField = .field
@@ -37,10 +36,20 @@ struct RegisterView: View {
             .navigationBarItems(leading: Button("Cancel") {
                 dismiss()
             }, trailing:
-            Button("Done") {
-                onSubmit()
+            Group {
+                if viewModel.isLoading {
+                    ProgressView()
+                } else {
+                    Button("Done") {
+                        onSubmit()
+                    }
+                    .disabled(viewModel.username.count == 0)
+                }
             })
             .padding()
+        }
+        .alert(isPresented: $viewModel.isError) {
+            Alert(title: Text("Please Try Again"))
         }
     }
 }
