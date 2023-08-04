@@ -3,9 +3,8 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject private var inject = Inject.observer
-    @State private var isShowingSheet = false
+    @StateObject private var viewModel = HomeViewModel()
     @Default(\.username) var username
-    @EnvironmentObject var gameStore: GameStore
 
     var body: some View {
         VStack {
@@ -31,19 +30,19 @@ struct HomeView: View {
 
             CTAButton(title: username == nil ? "Get Started" : "Play") {
                 if username == nil {
-                    isShowingSheet.toggle()
+                    viewModel.isShowingRegistrationSheet.toggle()
                 } else {
-                    gameStore.start()
+                    viewModel.isShowingGameModal.toggle()
                 }
             }
         }
 
         .padding()
         .navigationTitle(username == nil ? "Welcome!" : "Hello, \(username ?? "")!")
-        .sheet(isPresented: $isShowingSheet) {
+        .sheet(isPresented: $viewModel.isShowingRegistrationSheet) {
             RegisterView()
         }
-        .fullScreenCover(isPresented: $gameStore.isPlaying, content: {
+        .fullScreenCover(isPresented: $viewModel.isShowingGameModal, content: {
             GameView()
         })
         .enableInjection()

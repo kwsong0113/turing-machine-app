@@ -52,7 +52,7 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "API_ENDPOINT_URL"
-            value = "http://localhost:8004/api/v1"
+            value = "localhost:8004/api/v1"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

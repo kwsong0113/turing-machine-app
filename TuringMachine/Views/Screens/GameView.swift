@@ -1,22 +1,34 @@
 import SwiftUI
 
 struct GameView: View {
-    @EnvironmentObject var gameStore: GameStore
+    @StateObject private var viewModel = GameViewModel()
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         VStack {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             CTAButton(title: "Error") {
-                gameStore.status = .error
+                viewModel.showError(message: "Error")
             }
             CTAButton(title: "Quit") {
-                gameStore.status = .idle
+                quitAndDismiss()
             }
         }
-        .alert(isPresented: .constant(gameStore.status == .error)) {
-            Alert(title: Text("Error"), dismissButton: .default(Text("OK")) {
-                gameStore.status = .idle
-            })
+        .alert(isPresented: $viewModel.isError) {
+            Alert(
+                title: Text("Error"),
+                message: Text(viewModel.errorMessage ?? ""),
+                dismissButton: .default(Text("OK")
+                ) {
+                    quitAndDismiss()
+                }
+            )
+        }
+    }
+
+    private func quitAndDismiss() {
+        viewModel.quit {
+            dismiss()
         }
     }
 }
