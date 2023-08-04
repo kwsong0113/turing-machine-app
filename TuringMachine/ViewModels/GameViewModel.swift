@@ -30,11 +30,14 @@ class GameViewModel: ObservableObject {
     @Published var stage: Int = -1
     @Published var isError: Bool = false
     @Published var errorMessage: String?
+    @Default(\.userId) var userId
     private var gameId: Int?
-    private var webSocket = WebSocket()
+    private let webSocket = WebSocket()
+    private let problemService = ProblemService()
+    private let gameService = GameService()
+
     init() {
-        webSocket.connect(url: "/games/ws/1/2", completionHandler: webSocketHandler)
-        self.sendThumbDownMessage()
+        start()
     }
 
     func webSocketHandler(result: Result<URLSessionWebSocketTask.Message, Error>) {
@@ -57,6 +60,12 @@ class GameViewModel: ObservableObject {
         }
     }
 
+    private func connectToWebSocket() {
+        guard let gameId else { return }
+        guard let userId else { return }
+        webSocket.connect(url: "/games/ws/\(gameId)/\(userId)", completionHandler: webSocketHandler)
+    }
+
     func sendProblemMessage(difficulty: Int, numVerifiers: Int) {
         webSocket.send(ProblemMessage(difficulty: difficulty, numVerifiers: numVerifiers))
     }
@@ -67,6 +76,19 @@ class GameViewModel: ObservableObject {
 
     func sendThumbDownMessage() {
         webSocket.send(ThumbMessage(thumb: .thumbDown))
+    }
+
+    func start() {
+        gameService.startGame { result in
+            switch result {
+            case let .success(game):
+                self.gameId = game.id
+                self.connectToWebSocket()
+            case let .failure(error):
+                print(error)
+                self.showError(message: "Failed to start the game")
+            }
+        }
     }
 
     func promoteStage() {

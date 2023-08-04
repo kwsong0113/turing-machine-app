@@ -52,7 +52,12 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "API_ENDPOINT_URL"
-            value = "localhost:8004/api/v1"
+            value = "http://localhost:8004/api/v1"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "WEBSOCKET_ENDPOINT_URL"
+            value = "ws://localhost:8004/api/v1"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

@@ -9,9 +9,9 @@ class WebSocket: ObservableObject {
         url: String,
         completionHandler: @escaping (Result<URLSessionWebSocketTask.Message, Error>) -> Void
     ) {
-        guard let fullUrl = URL(string: "ws://"
-            + (ProcessInfo.processInfo.environment["API_ENDPOINT_URL"] ?? "")
-            + url
+        guard let fullUrl = URL(string:
+            (ProcessInfo.processInfo.environment["WEBSOCKET_ENDPOINT_URL"] ?? "")
+                + url
         ) else { return }
         print(fullUrl)
         let request = URLRequest(url: fullUrl)
