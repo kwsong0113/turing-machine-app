@@ -29,6 +29,9 @@
 		CAF59A952A7D0DA100813B9C /* ProblemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A942A7D0DA100813B9C /* ProblemService.swift */; };
 		CAF59A972A7D159F00813B9C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A962A7D159F00813B9C /* Game.swift */; };
 		CAF59A992A7D160500813B9C /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A982A7D160500813B9C /* GameService.swift */; };
+		CAF59A9B2A7D3CC700813B9C /* ProblemSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A9A2A7D3CC700813B9C /* ProblemSelectionView.swift */; };
+		CAF59A9D2A7D3DD000813B9C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A9C2A7D3DD000813B9C /* LoadingView.swift */; };
+		CAF59A9F2A7D47BD00813B9C /* ProblemSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A9E2A7D47BD00813B9C /* ProblemSelectionViewModel.swift */; };
 		F10C8AF7971593AC1981D339 /* Pods_TuringMachine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB96405E94F89CE41C438FFB /* Pods_TuringMachine.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +62,9 @@
 		CAF59A942A7D0DA100813B9C /* ProblemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemService.swift; sourceTree = "<group>"; };
 		CAF59A962A7D159F00813B9C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CAF59A982A7D160500813B9C /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		CAF59A9A2A7D3CC700813B9C /* ProblemSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemSelectionView.swift; sourceTree = "<group>"; };
+		CAF59A9C2A7D3DD000813B9C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		CAF59A9E2A7D47BD00813B9C /* ProblemSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemSelectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,7 @@
 				CAF59A7A2A7BA9C900813B9C /* RegisterViewModel.swift */,
 				CAF59A8E2A7CD1D200813B9C /* GameViewModel.swift */,
 				CAF59A922A7CD39F00813B9C /* HomeViewModel.swift */,
+				CAF59A9E2A7D47BD00813B9C /* ProblemSelectionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -189,6 +196,8 @@
 				CAF59A712A7B8B9700813B9C /* HomeView.swift */,
 				CAF59A782A7B9DE400813B9C /* RegisterView.swift */,
 				CAF59A882A7CBC1400813B9C /* GameView.swift */,
+				CAF59A9C2A7D3DD000813B9C /* LoadingView.swift */,
+				CAF59A9A2A7D3CC700813B9C /* ProblemSelectionView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -365,6 +374,8 @@
 			files = (
 				CAF59A932A7CD39F00813B9C /* HomeViewModel.swift in Sources */,
 				CAF59A722A7B8B9700813B9C /* HomeView.swift in Sources */,
+				CAF59A9B2A7D3CC700813B9C /* ProblemSelectionView.swift in Sources */,
+				CAF59A9D2A7D3DD000813B9C /* LoadingView.swift in Sources */,
 				CAF59A7B2A7BA9C900813B9C /* RegisterViewModel.swift in Sources */,
 				CAF59A952A7D0DA100813B9C /* ProblemService.swift in Sources */,
 				CAF59A812A7C17E100813B9C /* UserService.swift in Sources */,
@@ -379,6 +390,7 @@
 				CAF59A532A7B713400813B9C /* TuringMachineApp.swift in Sources */,
 				CAF59A872A7C310C00813B9C /* Defaults.swift in Sources */,
 				CAF59A972A7D159F00813B9C /* Game.swift in Sources */,
+				CAF59A9F2A7D47BD00813B9C /* ProblemSelectionViewModel.swift in Sources */,
 				CAF59A912A7CD29100813B9C /* Problem.swift in Sources */,
 				CAF59A742A7B8E4900813B9C /* CTAButton.swift in Sources */,
 				CAF59A892A7CBC1400813B9C /* GameView.swift in Sources */,

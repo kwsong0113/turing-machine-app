@@ -96,8 +96,8 @@ class GameViewModel: ObservableObject {
             case let .success(game):
                 self.gameId = game.id
                 self.connectToWebSocket()
-            case let .failure(error):
-                print(error)
+            case .failure:
+                print("failure")
                 self.showError(message: "Failed to start the game")
             }
         }
@@ -132,7 +132,7 @@ class GameViewModel: ObservableObject {
         errorMessage = message
     }
 
-    func quit(completion: @escaping () -> Void) {
+    func quit(completion: () -> Void) {
         completion()
     }
 }
