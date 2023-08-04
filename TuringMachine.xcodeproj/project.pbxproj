@@ -16,7 +16,7 @@
 		CAF59A792A7B9DE400813B9C /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A782A7B9DE400813B9C /* RegisterView.swift */; };
 		CAF59A7B2A7BA9C900813B9C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A7A2A7BA9C900813B9C /* RegisterViewModel.swift */; };
 		CAF59A7D2A7C0F4600813B9C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A7C2A7C0F4600813B9C /* NetworkManager.swift */; };
-		CAF59A7F2A7C16F500813B9C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A7E2A7C16F500813B9C /* APIError.swift */; };
+		CAF59A7F2A7C16F500813B9C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A7E2A7C16F500813B9C /* Error.swift */; };
 		CAF59A812A7C17E100813B9C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A802A7C17E100813B9C /* UserService.swift */; };
 		CAF59A832A7C182200813B9C /* Serviceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A822A7C182200813B9C /* Serviceable.swift */; };
 		CAF59A852A7C187E00813B9C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A842A7C187E00813B9C /* User.swift */; };
@@ -46,7 +46,7 @@
 		CAF59A782A7B9DE400813B9C /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		CAF59A7A2A7BA9C900813B9C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		CAF59A7C2A7C0F4600813B9C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		CAF59A7E2A7C16F500813B9C /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		CAF59A7E2A7C16F500813B9C /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		CAF59A802A7C17E100813B9C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		CAF59A822A7C182200813B9C /* Serviceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serviceable.swift; sourceTree = "<group>"; };
 		CAF59A842A7C187E00813B9C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				CAF59A7C2A7C0F4600813B9C /* NetworkManager.swift */,
-				CAF59A7E2A7C16F500813B9C /* APIError.swift */,
+				CAF59A7E2A7C16F500813B9C /* Error.swift */,
 				CAF59A802A7C17E100813B9C /* UserService.swift */,
 				CAF59A942A7D0DA100813B9C /* ProblemService.swift */,
 				CAF59A982A7D160500813B9C /* GameService.swift */,
@@ -375,7 +375,7 @@
 				CAF59A832A7C182200813B9C /* Serviceable.swift in Sources */,
 				CAF59A992A7D160500813B9C /* GameService.swift in Sources */,
 				CAF59A762A7B90C700813B9C /* MainNavigation.swift in Sources */,
-				CAF59A7F2A7C16F500813B9C /* APIError.swift in Sources */,
+				CAF59A7F2A7C16F500813B9C /* Error.swift in Sources */,
 				CAF59A532A7B713400813B9C /* TuringMachineApp.swift in Sources */,
 				CAF59A872A7C310C00813B9C /* Defaults.swift in Sources */,
 				CAF59A972A7D159F00813B9C /* Game.swift in Sources */,

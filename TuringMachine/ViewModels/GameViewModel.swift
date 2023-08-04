@@ -6,6 +6,7 @@ enum GameStatus {
     case problemSelecting
     case proposal
     case thumb
+    case result
 }
 
 struct ProblemMessage: Encodable {
@@ -25,11 +26,18 @@ struct ThumbMessage: Encodable {
     var num: Int?
 }
 
+enum ResultType: String {
+    case bothWrong = "BOTH_WRONG"
+    case bothCorrect = "BOTH_CORRECT"
+    case winner = "WINNER"
+}
+
 class GameViewModel: ObservableObject {
     @Published var status: GameStatus = .waitingForOtherUsers
     @Published var stage: Int = -1
     @Published var isError: Bool = false
     @Published var errorMessage: String?
+    @Published var problem: Problem?
     @Default(\.userId) var userId
     private var gameId: Int?
     private let webSocket = WebSocket()
@@ -40,23 +48,27 @@ class GameViewModel: ObservableObject {
         start()
     }
 
-    func webSocketHandler(result: Result<URLSessionWebSocketTask.Message, Error>) {
+    func webSocketHandler(result: Result<[String: Any], WebSocketError>) {
         switch result {
-        case .failure:
-            //            print(error.localizedDescription)
-            print("error")
         case let .success(message):
-            switch message {
-            case let .string(text):
-                print("Text")
-                print(text)
-            case let .data(data):
-                // Handle binary data
-                print("Data")
-                print(data)
-            @unknown default:
-                print("unknown")
+            print(message)
+            switch message["type"] as? String {
+            case "STAGE":
+                promoteStage()
+            case "PROBLEM":
+                moveToProblemSelection()
+            case "PROBLEM_ID":
+                if let problemId = message["problemId"] as? String {
+                    fetchProblem(problemId)
+                }
+            case "Result":
+                print("hrer")
+//                if message[""]
+            default:
+                return
             }
+        case .failure:
+            showError(message: "Unable to establish a connection.")
         }
     }
 
@@ -91,13 +103,28 @@ class GameViewModel: ObservableObject {
         }
     }
 
-    func promoteStage() {
+    func fetchProblem(_ id: String) {
+        problemService.getProblem(id: id) { result in
+            switch result {
+            case let .success(problem):
+                self.problem = problem
+            case .failure:
+                self.showError(message: "Failed to download a problem")
+            }
+        }
+    }
+
+    private func promoteStage() {
         stage += 1
         if stage == 0 {
             status = .waitingForProblemSelection
         } else {
             status = .proposal
         }
+    }
+
+    private func moveToProblemSelection() {
+        status = .problemSelecting
     }
 
     func showError(message: String) {
