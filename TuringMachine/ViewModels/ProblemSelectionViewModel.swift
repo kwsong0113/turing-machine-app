@@ -1,4 +1,4 @@
-import SwiftUI
+import Foundation
 
 enum Difficulty: String, CaseIterable, Identifiable {
     case easy, standard, hard

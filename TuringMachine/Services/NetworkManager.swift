@@ -25,20 +25,43 @@ struct NetworkManger: NetworkMangerable {
 
     func request<Response: Decodable>(
         path: String,
-        method: HTTPMethod = .get,
-        params: (some Encodable)? = nil,
+        method: HTTPMethod,
+        params: (some Encodable)?,
         resultType: Response.Type,
         completion: @escaping (Result<Response, APIError>) -> Void
     ) {
         let request = AF.request(
-            path,
+            addPercentToUrl(path),
             method: method,
             parameters: params,
             encoder: encoder
         )
 
+        perform(request: request, resultType: resultType, completion: completion)
+    }
+
+    func request<T: Decodable>(
+        path: String,
+        resultType: T.Type,
+        completion: @escaping (Result<T, APIError>) -> Void
+    ) {
+        let request = AF.request(addPercentToUrl(path))
+
+        perform(request: request, resultType: resultType, completion: completion)
+    }
+
+    private func addPercentToUrl(_ url: String) -> String {
+        url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? url
+    }
+
+    private func perform<T: Decodable>(
+        request: DataRequest,
+        resultType: T.Type,
+        completion: @escaping (Result<T, APIError>) -> Void
+    ) {
         request.responseDecodable(of: resultType, decoder: decoder) { result in
             guard result.error == nil else {
+                print(result.error)
                 completion(.failure(APIError.transportError))
                 return
             }
@@ -56,13 +79,5 @@ struct NetworkManger: NetworkMangerable {
 
             completion(.success(data))
         }
-    }
-
-    func request<T: Decodable>(
-        path: String,
-        resultType: T.Type,
-        completion: @escaping (Result<T, APIError>) -> Void
-    ) {
-        request<T>(path: path, resultType: resultType, completion: completion)
     }
 }

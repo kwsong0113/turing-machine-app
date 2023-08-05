@@ -32,6 +32,8 @@
 		CAF59A9B2A7D3CC700813B9C /* ProblemSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A9A2A7D3CC700813B9C /* ProblemSelectionView.swift */; };
 		CAF59A9D2A7D3DD000813B9C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A9C2A7D3DD000813B9C /* LoadingView.swift */; };
 		CAF59A9F2A7D47BD00813B9C /* ProblemSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A9E2A7D47BD00813B9C /* ProblemSelectionViewModel.swift */; };
+		CAF59AA12A7D4E7E00813B9C /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59AA02A7D4E7E00813B9C /* QuestionView.swift */; };
+		CAF59AA32A7D4ECF00813B9C /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59AA22A7D4ECF00813B9C /* QuestionViewModel.swift */; };
 		F10C8AF7971593AC1981D339 /* Pods_TuringMachine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB96405E94F89CE41C438FFB /* Pods_TuringMachine.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		CAF59A9A2A7D3CC700813B9C /* ProblemSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemSelectionView.swift; sourceTree = "<group>"; };
 		CAF59A9C2A7D3DD000813B9C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CAF59A9E2A7D47BD00813B9C /* ProblemSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemSelectionViewModel.swift; sourceTree = "<group>"; };
+		CAF59AA02A7D4E7E00813B9C /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		CAF59AA22A7D4ECF00813B9C /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,7 @@
 				CAF59A8E2A7CD1D200813B9C /* GameViewModel.swift */,
 				CAF59A922A7CD39F00813B9C /* HomeViewModel.swift */,
 				CAF59A9E2A7D47BD00813B9C /* ProblemSelectionViewModel.swift */,
+				CAF59AA22A7D4ECF00813B9C /* QuestionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				CAF59A882A7CBC1400813B9C /* GameView.swift */,
 				CAF59A9C2A7D3DD000813B9C /* LoadingView.swift */,
 				CAF59A9A2A7D3CC700813B9C /* ProblemSelectionView.swift */,
+				CAF59AA02A7D4E7E00813B9C /* QuestionView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 				CAF59A7B2A7BA9C900813B9C /* RegisterViewModel.swift in Sources */,
 				CAF59A952A7D0DA100813B9C /* ProblemService.swift in Sources */,
 				CAF59A812A7C17E100813B9C /* UserService.swift in Sources */,
+				CAF59AA32A7D4ECF00813B9C /* QuestionViewModel.swift in Sources */,
 				CAF59A792A7B9DE400813B9C /* RegisterView.swift in Sources */,
 				CAF59A8F2A7CD1D200813B9C /* GameViewModel.swift in Sources */,
 				CAF59A8D2A7CD16900813B9C /* WebSocket.swift in Sources */,
@@ -388,6 +395,7 @@
 				CAF59A762A7B90C700813B9C /* MainNavigation.swift in Sources */,
 				CAF59A7F2A7C16F500813B9C /* Error.swift in Sources */,
 				CAF59A532A7B713400813B9C /* TuringMachineApp.swift in Sources */,
+				CAF59AA12A7D4E7E00813B9C /* QuestionView.swift in Sources */,
 				CAF59A872A7C310C00813B9C /* Defaults.swift in Sources */,
 				CAF59A972A7D159F00813B9C /* Game.swift in Sources */,
 				CAF59A9F2A7D47BD00813B9C /* ProblemSelectionViewModel.swift in Sources */,

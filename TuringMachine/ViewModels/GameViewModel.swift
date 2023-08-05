@@ -1,10 +1,11 @@
-import SwiftUI
+import Foundation
 
 enum GameStatus {
     case waitingForOtherUsers
     case waitingForProblemSelection
     case problemSelecting
     case proposal
+    case proposalResult
     case thumb
     case result
 }
@@ -32,15 +33,22 @@ enum ResultType: String {
     case winner = "WINNER"
 }
 
+enum VerificationResultType {
+    case correct
+    case wrong
+    case skip
+}
+
 class GameViewModel: ObservableObject {
     @Published var status: GameStatus = .waitingForOtherUsers
     @Published var stage: Int = -1
     @Published var isError: Bool = false
     @Published var errorMessage: String?
     @Published var problem: Problem?
+    @Published var verificationResult: [VerificationResultType]?
     @Default(\.userId) var userId
     private var gameId: Int?
-    private let webSocket = WebSocket()
+    private var webSocket = WebSocket()
     private let problemService = ProblemService()
     private let gameService = GameService()
 
@@ -58,7 +66,7 @@ class GameViewModel: ObservableObject {
             case "PROBLEM":
                 moveToProblemSelection()
             case "PROBLEM_ID":
-                if let problemId = message["problemId"] as? String {
+                if let problemId = message["id"] as? String {
                     fetchProblem(problemId)
                 }
             case "Result":
@@ -114,25 +122,69 @@ class GameViewModel: ObservableObject {
         }
     }
 
+    func askQuestion(proposal: Int, verifierIndices: [Int]) {
+        guard let problem else { return }
+        status = .proposalResult
+        problemService.verify(problemId: problem.id, proposal: proposal, verifierIndices: verifierIndices) { result in
+            switch result {
+            case let .success(successResult):
+                var verificationResult: [VerificationResultType] = Array(
+                    repeating: .skip,
+                    count: problem.verifiers.count
+                )
+                for (idx, val) in successResult.enumerated() {
+                    verificationResult[verifierIndices[idx]] = val ? .correct : .wrong
+                }
+                self.verificationResult = verificationResult
+            case .failure:
+                self.showError(message: "Failed to verify the proposal")
+            }
+        }
+    }
+
+    func moveToThumb() {
+        status = .thumb
+    }
+
     private func promoteStage() {
-        stage += 1
-        if stage == 0 {
-            status = .waitingForProblemSelection
-        } else {
-            status = .proposal
+        DispatchQueue.main.async {
+            self.stage += 1
+            if self.stage == 0 {
+                self.status = .waitingForProblemSelection
+            } else {
+                self.status = .proposal
+            }
         }
     }
 
     private func moveToProblemSelection() {
-        status = .problemSelecting
+        DispatchQueue.main.async {
+            self.status = .problemSelecting
+        }
     }
 
     func showError(message: String) {
-        isError = true
-        errorMessage = message
+        DispatchQueue.main.async {
+            self.isError = true
+            self.errorMessage = message
+        }
     }
 
-    func quit(completion: () -> Void) {
+    func quit(completion: @escaping () -> Void) {
+        reset()
         completion()
+    }
+
+    func reset() {
+        DispatchQueue.main.async {
+            self.status = .waitingForOtherUsers
+            self.stage = -1
+            self.isError = false
+            self.errorMessage = nil
+            self.problem = nil
+            self.gameId = nil
+            self.verificationResult = nil
+            self.webSocket = WebSocket()
+        }
     }
 }

@@ -1,5 +1,4 @@
 import Alamofire
-import SwiftUI
 
 class RegisterViewModel: ObservableObject {
     @Published var username = ""

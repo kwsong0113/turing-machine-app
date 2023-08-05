@@ -8,32 +8,38 @@ struct GameView: View {
 
     var body: some View {
         NavigationView {
-            switch viewModel.status {
-            case .waitingForOtherUsers:
-                LoadingView(message: "Waiting for other users")
-            case .waitingForProblemSelection:
-                LoadingView(message: "Your opponent is choosing a problem")
-            case .problemSelecting:
-                ProblemSelectionView()
-            case .proposal:
-                LoadingView(message: "Proposal")
-            case .thumb:
-                LoadingView(message: "Thumb")
-            case .result:
-                LoadingView(message: "Result")
-            }
-        }
-        .alert(isPresented: $viewModel.isError) {
-            Alert(
-                title: Text("Error"),
-                message: Text(viewModel.errorMessage ?? ""),
-                dismissButton: .default(Text("OK")
-                ) {
-                    viewModel.isError = false
-                    quitAndDismiss()
+            Group {
+                switch viewModel.status {
+                case .waitingForOtherUsers:
+                    LoadingView(message: "Waiting for other users")
+                case .waitingForProblemSelection:
+                    LoadingView(message: "Your opponent is choosing a problem")
+                case .problemSelecting:
+                    ProblemSelectionView()
+                case .proposal, .proposalResult:
+                    QuestionView()
+                case .thumb:
+                    LoadingView(message: "Thumb")
+                case .result:
+                    LoadingView(message: "Result")
                 }
-            )
+            }
+            .navigationBarItems(leading:
+                Group {
+                    switch viewModel.status {
+                    case .proposal, .proposalResult, .thumb:
+                        Text("Round #\(viewModel.stage)")
+                            .foregroundColor(Color("Primary"))
+                    default:
+                        EmptyView()
+                    }
+                })
         }
+        .alert("Error", isPresented: $viewModel.isError, actions: {
+            Button("OK") {
+                quitAndDismiss()
+            }
+        }, message: { Text(viewModel.errorMessage ?? "") })
         .environmentObject(viewModel)
         .enableInjection()
     }
