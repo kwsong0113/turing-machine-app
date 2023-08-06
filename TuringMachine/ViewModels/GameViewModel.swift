@@ -27,7 +27,7 @@ struct ThumbMessage: Encodable {
     var num: Int?
 }
 
-enum ResultType: String {
+enum GameResultType: String {
     case bothWrong = "BOTH_WRONG"
     case bothCorrect = "BOTH_CORRECT"
     case winner = "WINNER"
@@ -46,6 +46,8 @@ class GameViewModel: ObservableObject {
     @Published var errorMessage: String?
     @Published var problem: Problem?
     @Published var verificationRecord: [[VerificationResultType]] = []
+    @Published var result: GameResultType = .bothWrong
+    @Published var isUserWinner: Bool = false
     @Default(\.userId) var userId
     private var gameId: Int?
     private var webSocket = WebSocket()
@@ -54,6 +56,30 @@ class GameViewModel: ObservableObject {
 
     init() {
         start()
+    }
+
+    internal init(
+        status: GameStatus = .waitingForOtherUsers,
+        stage: Int = -1,
+        isError: Bool = false,
+        errorMessage: String? = nil,
+        problem: Problem? = nil,
+        verificationRecord: [[VerificationResultType]] = [],
+        result: GameResultType = .bothWrong,
+        isUserWinner: Bool = false,
+        userId _: Int? = nil, gameId: Int? = nil,
+        webSocket: WebSocket = WebSocket()
+    ) {
+        self.status = status
+        self.stage = stage
+        self.isError = isError
+        self.errorMessage = errorMessage
+        self.problem = problem
+        self.verificationRecord = verificationRecord
+        self.result = result
+        self.isUserWinner = isUserWinner
+        self.gameId = gameId
+        self.webSocket = webSocket
     }
 
     func webSocketHandler(result: Result<[String: Any], WebSocketError>) {
@@ -69,15 +95,18 @@ class GameViewModel: ObservableObject {
                 if let problemId = message["id"] as? String {
                     fetchProblem(problemId)
                 }
-            case "Result":
-                print("hrer")
-//                if message[""]
+            case "RESULT":
+                guard let type = message["result_type"] as? String else { return }
+                if type == "NO_THUMB" { return }
+                showResult(type: type, winnerId: message["winner_id"] as? Int)
             default:
                 return
             }
         case .failure:
-            if status == .result { return }
-            showError(message: "Unable to establish a connection.")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                if self.status == .result { return }
+                self.showError(message: "Unable to establish a connection.")
+            }
         }
     }
 
@@ -161,6 +190,23 @@ class GameViewModel: ObservableObject {
     private func moveToProblemSelection() {
         DispatchQueue.main.async {
             self.status = .problemSelecting
+        }
+    }
+
+    func showResult(type: String, winnerId: Int?) {
+        DispatchQueue.main.async {
+            self.status = .result
+            switch type {
+            case "BOTH_CORRECT":
+                self.result = .bothCorrect
+            case "BOTH_WRONG":
+                self.result = .bothWrong
+            case "WINNER":
+                self.result = .winner
+                self.isUserWinner = winnerId == self.userId
+            default:
+                self.result = .bothWrong
+            }
         }
     }
 

@@ -21,22 +21,33 @@ struct GameView: View {
                 case .thumb:
                     ThumbView()
                 case .result:
-                    LoadingView(message: "Result")
+                    ResultView()
                 }
             }
             .navigationBarItems(leading:
                 HStack {
-                    Button {
-                        quitAndDismiss()
-                    } label: {
-                        Text("Quit")
+                    if viewModel.status != .result {
+                        Button {
+                            quitAndDismiss()
+                        } label: {
+                            Text("Quit")
+                        }
                     }
                     switch viewModel.status {
-                    case .proposal, .proposalResult, .thumb:
+                    case .proposal, .proposalResult, .thumb, .result:
                         Text("Round #\(viewModel.stage)")
                             .foregroundColor(Color("Primary"))
                     default:
                         EmptyView()
+                    }
+                }, trailing:
+                Group {
+                    if viewModel.status == .result {
+                        Button {
+                            quitAndDismiss()
+                        } label: {
+                            Text("Leave")
+                        }
                     }
                 })
         }

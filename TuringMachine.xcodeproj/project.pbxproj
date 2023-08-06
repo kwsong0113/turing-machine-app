@@ -38,6 +38,7 @@
 		CAF59AA72A7EB91500813B9C /* ThumbViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59AA62A7EB91500813B9C /* ThumbViewModel.swift */; };
 		CAF59AA92A7EC13600813B9C /* ThreeDigitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59AA82A7EC13600813B9C /* ThreeDigitPicker.swift */; };
 		CAF59AAC2A7FC87C00813B9C /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59AAB2A7FC87C00813B9C /* Array+Safe.swift */; };
+		CAF59AAE2A7FD3B700813B9C /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59AAD2A7FD3B700813B9C /* ResultView.swift */; };
 		F10C8AF7971593AC1981D339 /* Pods_TuringMachine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB96405E94F89CE41C438FFB /* Pods_TuringMachine.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		CAF59AA62A7EB91500813B9C /* ThumbViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbViewModel.swift; sourceTree = "<group>"; };
 		CAF59AA82A7EC13600813B9C /* ThreeDigitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDigitPicker.swift; sourceTree = "<group>"; };
 		CAF59AAB2A7FC87C00813B9C /* Array+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
+		CAF59AAD2A7FD3B700813B9C /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 				CAF59A9A2A7D3CC700813B9C /* ProblemSelectionView.swift */,
 				CAF59AA02A7D4E7E00813B9C /* QuestionView.swift */,
 				CAF59AA42A7EB87300813B9C /* ThumbView.swift */,
+				CAF59AAD2A7FD3B700813B9C /* ResultView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				CAF59AA72A7EB91500813B9C /* ThumbViewModel.swift in Sources */,
 				CAF59A992A7D160500813B9C /* GameService.swift in Sources */,
 				CAF59A762A7B90C700813B9C /* MainNavigation.swift in Sources */,
+				CAF59AAE2A7FD3B700813B9C /* ResultView.swift in Sources */,
 				CAF59A7F2A7C16F500813B9C /* Error.swift in Sources */,
 				CAF59A532A7B713400813B9C /* TuringMachineApp.swift in Sources */,
 				CAF59AA12A7D4E7E00813B9C /* QuestionView.swift in Sources */,
