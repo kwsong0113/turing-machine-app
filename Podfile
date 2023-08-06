@@ -10,5 +10,6 @@ target 'TuringMachine' do
   pod 'SwiftFormat/CLI', '~> 0.49'
   pod 'InjectHotReload'
   pod 'Alamofire'
+  pod 'BottomSheetSwiftUI'
   
 end

@@ -1,11 +1,13 @@
 PODS:
   - Alamofire (5.7.1)
+  - BottomSheetSwiftUI (3.1.1)
   - InjectHotReload (1.2.2)
   - SwiftFormat/CLI (0.51.13)
   - SwiftLint (0.52.4)
 
 DEPENDENCIES:
   - Alamofire
+  - BottomSheetSwiftUI
   - InjectHotReload
   - SwiftFormat/CLI (~> 0.49)
   - SwiftLint
@@ -13,16 +15,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BottomSheetSwiftUI
     - InjectHotReload
     - SwiftFormat
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  BottomSheetSwiftUI: 08b5ada340a164b7ef49cf04b6733a0bd3f02957
   InjectHotReload: e524b7c46ec063d84e407e65df5fe251cde19b32
   SwiftFormat: f4c21fdf8aacdd2db6ffe110f939e0548c9a7de3
   SwiftLint: 1cc5cd61ba9bacb2194e340aeb47a2a37fda00b3
 
-PODFILE CHECKSUM: f42a230ab7e28e06b3a817291bd407162428a474
+PODFILE CHECKSUM: 1bf35b7564d090a5158e258670974a093d44d577
 
 COCOAPODS: 1.12.1
