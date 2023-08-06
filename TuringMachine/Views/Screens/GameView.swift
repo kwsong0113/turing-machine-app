@@ -19,13 +19,18 @@ struct GameView: View {
                 case .proposal, .proposalResult:
                     QuestionView()
                 case .thumb:
-                    LoadingView(message: "Thumb")
+                    ThumbView()
                 case .result:
                     LoadingView(message: "Result")
                 }
             }
             .navigationBarItems(leading:
-                Group {
+                HStack {
+                    Button {
+                        quitAndDismiss()
+                    } label: {
+                        Text("Quit")
+                    }
                     switch viewModel.status {
                     case .proposal, .proposalResult, .thumb:
                         Text("Round #\(viewModel.stage)")

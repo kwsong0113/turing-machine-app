@@ -19,6 +19,13 @@ enum Difficulty: String, CaseIterable, Identifiable {
 }
 
 class ProblemSelectionViewModel: ObservableObject {
+    internal init(difficulty: Difficulty = Difficulty.easy, numVerifiers: Int = 4, isLoading: Bool = false) {
+        self.difficulty = difficulty
+        self.numVerifiers = numVerifiers
+        self.isLoading = isLoading
+    }
+
     @Published var difficulty = Difficulty.easy
     @Published var numVerifiers = 4
+    @Published var isLoading = false
 }

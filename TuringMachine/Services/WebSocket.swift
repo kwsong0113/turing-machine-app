@@ -1,7 +1,9 @@
 import Foundation
 
 class WebSocket: ObservableObject {
-    private var webSocketTask: URLSessionWebSocketTask?
+    private var webSocketTask: URLSessionWebSocketTask? {
+        didSet { oldValue?.cancel(with: .goingAway, reason: nil) }
+    }
 
     init() {}
 
@@ -18,6 +20,10 @@ class WebSocket: ObservableObject {
         webSocketTask = URLSession.shared.webSocketTask(with: request)
         webSocketTask?.resume()
         receive(completionHandler)
+    }
+
+    func close() {
+        webSocketTask = nil
     }
 
     func receive(_ completionHandler: @escaping (Result<[String: Any], WebSocketError>) -> Void) {

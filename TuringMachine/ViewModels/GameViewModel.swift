@@ -184,7 +184,7 @@ class GameViewModel: ObservableObject {
             self.problem = nil
             self.gameId = nil
             self.verificationResult = nil
-            self.webSocket = WebSocket()
         }
+        webSocket.close()
     }
 }

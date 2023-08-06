@@ -12,17 +12,7 @@ struct QuestionView: View {
         VStack(spacing: 20) {
             if showProposalAnimation {
                 GroupBox {
-                    HStack {
-                        ForEach(0 ..< 3) {
-                            Picker("Digit \($0)", selection: $questionViewModel.digits[$0]) {
-                                ForEach(1 ..< 6) {
-                                    Text(String($0))
-                                }
-                            }
-                            .pickerStyle(.wheel)
-                            .disabled(gameViewModel.status != .proposal)
-                        }
-                    }
+                    ThreeDigitPicker(digits: $questionViewModel.digits, disabled: gameViewModel.status != .proposal)
                 } label: {
                     Text("Compose your 3-digit proposals")
                 }
@@ -121,6 +111,6 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView()
+        QuestionView().environmentObject(GameViewModel())
     }
 }

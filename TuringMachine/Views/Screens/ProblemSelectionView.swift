@@ -15,6 +15,7 @@ struct ProblemSelectionView: View {
                     ForEach(Difficulty.allCases) { Text($0.rawValue.capitalized) }
                 }
                 .pickerStyle(.segmented)
+                .disabled(problemSelectionViewModel.isLoading)
             }
             GroupBox {
                 Text("Verifiers")
@@ -25,9 +26,11 @@ struct ProblemSelectionView: View {
                     Text("6").tag(6)
                 }
                 .pickerStyle(.segmented)
+                .disabled(problemSelectionViewModel.isLoading)
             }
             Spacer()
-            CTAButton(title: "Generate") {
+            CTAButton(title: "Generate", isLoading: problemSelectionViewModel.isLoading) {
+                problemSelectionViewModel.isLoading.toggle()
                 gameViewModel.sendProblemMessage(
                     difficulty: problemSelectionViewModel.difficulty.value,
                     numVerifiers: problemSelectionViewModel.numVerifiers
@@ -42,6 +45,14 @@ struct ProblemSelectionView: View {
 
 struct ProblemSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        ProblemSelectionView()
+        Group {
+            NavigationView {
+                ProblemSelectionView()
+            }
+            NavigationView {
+                ProblemSelectionView(problemSelectionViewModel: ProblemSelectionViewModel(isLoading: true))
+            }
+            .previewDisplayName("Problem Selection View - Loading")
+        }
     }
 }
