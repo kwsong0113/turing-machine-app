@@ -28,7 +28,7 @@ struct QuestionView: View {
                                 ForEach(problem.verifiers.indices, id: \.self) { index in
                                     VStack(alignment: .leading, spacing: 20) {
                                         Toggle(isOn: $questionViewModel.isVerifiersOn[index]) {
-                                            Text(intToAlphabet(index))
+                                            Text(index.toAlphabet())
                                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                                         }
                                         .frame(width: 40, height: 40)
@@ -103,11 +103,6 @@ struct QuestionView: View {
             }
         }
         .enableInjection()
-    }
-
-    func intToAlphabet(_ int: Int) -> String {
-        guard let unicodeScalar = UnicodeScalar(97 + int) else { return "A" }
-        return String(unicodeScalar).uppercased()
     }
 }
 

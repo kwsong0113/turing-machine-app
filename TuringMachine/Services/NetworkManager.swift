@@ -61,7 +61,6 @@ struct NetworkManger: NetworkMangerable {
     ) {
         request.responseDecodable(of: resultType, decoder: decoder) { result in
             guard result.error == nil else {
-                print(result.error)
                 completion(.failure(APIError.transportError))
                 return
             }

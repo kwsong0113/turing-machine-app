@@ -1,3 +1,4 @@
+import BottomSheetSwiftUI
 import Foundation
 
 enum GameStatus {
@@ -39,6 +40,15 @@ enum VerificationResultType {
     case skip
 }
 
+enum Tab: CaseIterable, Identifiable {
+    case criteria
+    case verification
+
+    var id: Self {
+        self
+    }
+}
+
 class GameViewModel: ObservableObject {
     @Published var status: GameStatus = .waitingForOtherUsers
     @Published var stage: Int = -1
@@ -48,6 +58,8 @@ class GameViewModel: ObservableObject {
     @Published var verificationRecord: [[VerificationResultType]] = []
     @Published var result: GameResultType = .bothWrong
     @Published var isUserWinner: Bool = false
+    @Published var bottomSheetPosition: BottomSheetPosition = .hidden
+    @Published var selectedTab: Tab = .criteria
     @Default(\.userId) var userId
     private var gameId: Int?
     private var webSocket = WebSocket()
@@ -67,7 +79,10 @@ class GameViewModel: ObservableObject {
         verificationRecord: [[VerificationResultType]] = [],
         result: GameResultType = .bothWrong,
         isUserWinner: Bool = false,
-        userId _: Int? = nil, gameId: Int? = nil,
+        bottomSheetPosition: BottomSheetPosition = .hidden,
+        selectedTab: Tab = .criteria,
+        userId _: Int? = nil,
+        gameId: Int? = nil,
         webSocket: WebSocket = WebSocket()
     ) {
         self.status = status
@@ -78,6 +93,8 @@ class GameViewModel: ObservableObject {
         self.verificationRecord = verificationRecord
         self.result = result
         self.isUserWinner = isUserWinner
+        self.bottomSheetPosition = bottomSheetPosition
+        self.selectedTab = selectedTab
         self.gameId = gameId
         self.webSocket = webSocket
     }
@@ -146,6 +163,7 @@ class GameViewModel: ObservableObject {
             switch result {
             case let .success(problem):
                 self.problem = problem
+                self.bottomSheetPosition = .dynamicTop
             case .failure:
                 self.showError(message: "Failed to download a problem")
             }
