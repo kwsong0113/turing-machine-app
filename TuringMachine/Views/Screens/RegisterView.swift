@@ -9,7 +9,7 @@ struct RegisterView: View {
     @ObservedObject private var inject = Inject.observer
     @FocusState private var focusedField: FocusedField?
     @Environment(\.dismiss) private var dismiss
-    @StateObject var viewModel = RegisterViewModel()
+    @StateObject private var viewModel = RegisterViewModel()
 
     private func onSubmit() {
         viewModel.register {

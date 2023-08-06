@@ -3,7 +3,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject private var inject = Inject.observer
-    @State private var isShowingSheet = false
+    @StateObject private var viewModel = HomeViewModel()
     @Default(\.username) var username
 
     var body: some View {
@@ -30,18 +30,21 @@ struct HomeView: View {
 
             CTAButton(title: username == nil ? "Get Started" : "Play") {
                 if username == nil {
-                    isShowingSheet.toggle()
-                } else {}
+                    viewModel.isShowingRegistrationSheet.toggle()
+                } else {
+                    viewModel.isShowingGameModal.toggle()
+                }
             }
         }
+
         .padding()
         .navigationTitle(username == nil ? "Welcome!" : "Hello, \(username ?? "")!")
-        .sheet(isPresented: $isShowingSheet) {
+        .sheet(isPresented: $viewModel.isShowingRegistrationSheet) {
             RegisterView()
         }
-//        .fullScreenCover(isPresented: .constant(true), content: {
-//            RegisterView()
-//        })
+        .fullScreenCover(isPresented: $viewModel.isShowingGameModal, content: {
+            GameView()
+        })
         .enableInjection()
     }
 }
