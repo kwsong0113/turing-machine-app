@@ -38,7 +38,9 @@ struct QuestionView: View {
                                         )
                                         .tint(Color("Primary"))
                                         .disabled(gameViewModel.status != .proposal)
-                                        if let verificationResult = gameViewModel.verificationResult {
+                                        if let verificationResult =
+                                            gameViewModel.verificationRecord[safe: gameViewModel.stage - 1]
+                                        {
                                             switch verificationResult[index] {
                                             case .correct:
                                                 Image(systemName: "checkmark.square.fill")

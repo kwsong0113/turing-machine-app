@@ -45,7 +45,7 @@ class GameViewModel: ObservableObject {
     @Published var isError: Bool = false
     @Published var errorMessage: String?
     @Published var problem: Problem?
-    @Published var verificationResult: [VerificationResultType]?
+    @Published var verificationRecord: [[VerificationResultType]] = []
     @Default(\.userId) var userId
     private var gameId: Int?
     private var webSocket = WebSocket()
@@ -76,6 +76,7 @@ class GameViewModel: ObservableObject {
                 return
             }
         case .failure:
+            if status == .result { return }
             showError(message: "Unable to establish a connection.")
         }
     }
@@ -135,7 +136,7 @@ class GameViewModel: ObservableObject {
                 for (idx, val) in successResult.enumerated() {
                     verificationResult[verifierIndices[idx]] = val ? .correct : .wrong
                 }
-                self.verificationResult = verificationResult
+                self.verificationRecord.append(verificationResult)
             case .failure:
                 self.showError(message: "Failed to verify the proposal")
             }
@@ -183,7 +184,7 @@ class GameViewModel: ObservableObject {
             self.errorMessage = nil
             self.problem = nil
             self.gameId = nil
-            self.verificationResult = nil
+            self.verificationRecord = [[]]
         }
         webSocket.close()
     }
