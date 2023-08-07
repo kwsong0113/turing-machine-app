@@ -11,10 +11,7 @@ class WebSocket: ObservableObject {
         url: String,
         completionHandler: @escaping (Result<[String: Any], WebSocketError>) -> Void
     ) {
-        guard let fullUrl = URL(string:
-            (ProcessInfo.processInfo.environment["WEBSOCKET_ENDPOINT_URL"] ?? "")
-                + url
-        ) else { return }
+        guard let fullUrl = URL(string: Secret.webSocketEndpointURL + url) else { return }
         let request = URLRequest(url: fullUrl)
         print(fullUrl)
         webSocketTask = URLSession.shared.webSocketTask(with: request)
