@@ -1,9 +1,10 @@
+import BottomSheetSwiftUI
 import InjectHotReload
 import SwiftUI
 
 struct GameView: View {
     @ObservedObject private var inject = Inject.observer
-    @ObservedObject private var viewModel = GameViewModel()
+    @ObservedObject var viewModel = GameViewModel()
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -51,6 +52,33 @@ struct GameView: View {
                     }
                 })
         }
+        .bottomSheet(
+            bottomSheetPosition: $viewModel.bottomSheetPosition,
+            switchablePositions: [.dynamicTop, .dynamicBottom, .hidden],
+            headerContent: {
+                VStack(alignment: .leading) {
+                    Text("Problem")
+                        .font(.title2).bold()
+
+                    Picker("Tab", selection: $viewModel.selectedTab) {
+                        ForEach(Tab.allCases) {
+                            Text("\($0 == .criteria ? "Criteria Cards" : "Verification Results")")
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    Divider().padding(EdgeInsets(top: 10, leading: -20, bottom: 0, trailing: -20))
+                }
+                .padding([.horizontal])
+            },
+            mainContent: {
+                switch viewModel.selectedTab {
+                case .criteria:
+                    CriteriaView()
+                case .verification:
+                    VerificationView()
+                }
+            }
+        )
         .alert("Error", isPresented: $viewModel.isError, actions: {
             Button("OK") {
                 quitAndDismiss()
@@ -69,6 +97,10 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+        GameView(viewModel: GameViewModel(
+            status: .proposal,
+            problem: Problem(id: "Example", verifiers: [1, 2, 3, 4], laws: [1, 2, 3], code: 444),
+            bottomSheetPosition: .dynamicTop
+        ))
     }
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA5396912A800A670047BCDB /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5396902A800A670047BCDB /* RemoteImage.swift */; };
+		CA5396932A800A890047BCDB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5396922A800A890047BCDB /* ImageCache.swift */; };
+		CA5396952A8017E90047BCDB /* Int+Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5396942A8017E90047BCDB /* Int+Alphabet.swift */; };
+		CA5396972A8020050047BCDB /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5396962A8020050047BCDB /* VerificationView.swift */; };
+		CAC7B3922A8004CD0010C4D0 /* CriteriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7B3912A8004CD0010C4D0 /* CriteriaView.swift */; };
 		CAF59A532A7B713400813B9C /* TuringMachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A522A7B713400813B9C /* TuringMachineApp.swift */; };
 		CAF59A572A7B713500813B9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF59A562A7B713500813B9C /* Assets.xcassets */; };
 		CAF59A5A2A7B713500813B9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF59A592A7B713500813B9C /* Preview Assets.xcassets */; };
@@ -46,6 +51,11 @@
 		04CB4784166E4B9C3DCC71E4 /* Pods-TuringMachine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuringMachine.debug.xcconfig"; path = "Target Support Files/Pods-TuringMachine/Pods-TuringMachine.debug.xcconfig"; sourceTree = "<group>"; };
 		9FB265AE9BDD7CEC2CC2F7E8 /* Pods-TuringMachine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuringMachine.release.xcconfig"; path = "Target Support Files/Pods-TuringMachine/Pods-TuringMachine.release.xcconfig"; sourceTree = "<group>"; };
 		AB96405E94F89CE41C438FFB /* Pods_TuringMachine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuringMachine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA5396902A800A670047BCDB /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		CA5396922A800A890047BCDB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		CA5396942A8017E90047BCDB /* Int+Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Alphabet.swift"; sourceTree = "<group>"; };
+		CA5396962A8020050047BCDB /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		CAC7B3912A8004CD0010C4D0 /* CriteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaView.swift; sourceTree = "<group>"; };
 		CAF59A4F2A7B713400813B9C /* TuringMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF59A522A7B713400813B9C /* TuringMachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuringMachineApp.swift; sourceTree = "<group>"; };
 		CAF59A562A7B713500813B9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				CAF59A862A7C310C00813B9C /* Defaults.swift */,
+				CA5396922A800A890047BCDB /* ImageCache.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -218,6 +229,8 @@
 				CAF59AA02A7D4E7E00813B9C /* QuestionView.swift */,
 				CAF59AA42A7EB87300813B9C /* ThumbView.swift */,
 				CAF59AAD2A7FD3B700813B9C /* ResultView.swift */,
+				CAC7B3912A8004CD0010C4D0 /* CriteriaView.swift */,
+				CA5396962A8020050047BCDB /* VerificationView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -227,6 +240,7 @@
 			children = (
 				CAF59A732A7B8E4900813B9C /* CTAButton.swift */,
 				CAF59AA82A7EC13600813B9C /* ThreeDigitPicker.swift */,
+				CA5396902A800A670047BCDB /* RemoteImage.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -243,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				CAF59AAB2A7FC87C00813B9C /* Array+Safe.swift */,
+				CA5396942A8017E90047BCDB /* Int+Alphabet.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -403,6 +418,7 @@
 			files = (
 				CAF59A932A7CD39F00813B9C /* HomeViewModel.swift in Sources */,
 				CAF59A722A7B8B9700813B9C /* HomeView.swift in Sources */,
+				CA5396932A800A890047BCDB /* ImageCache.swift in Sources */,
 				CAF59A9B2A7D3CC700813B9C /* ProblemSelectionView.swift in Sources */,
 				CAF59A9D2A7D3DD000813B9C /* LoadingView.swift in Sources */,
 				CAF59A7B2A7BA9C900813B9C /* RegisterViewModel.swift in Sources */,
@@ -416,8 +432,11 @@
 				CAF59AA92A7EC13600813B9C /* ThreeDigitPicker.swift in Sources */,
 				CAF59A832A7C182200813B9C /* Serviceable.swift in Sources */,
 				CAF59AA72A7EB91500813B9C /* ThumbViewModel.swift in Sources */,
+				CA5396952A8017E90047BCDB /* Int+Alphabet.swift in Sources */,
+				CA5396912A800A670047BCDB /* RemoteImage.swift in Sources */,
 				CAF59A992A7D160500813B9C /* GameService.swift in Sources */,
 				CAF59A762A7B90C700813B9C /* MainNavigation.swift in Sources */,
+				CA5396972A8020050047BCDB /* VerificationView.swift in Sources */,
 				CAF59AAE2A7FD3B700813B9C /* ResultView.swift in Sources */,
 				CAF59A7F2A7C16F500813B9C /* Error.swift in Sources */,
 				CAF59A532A7B713400813B9C /* TuringMachineApp.swift in Sources */,
@@ -427,6 +446,7 @@
 				CAF59A972A7D159F00813B9C /* Game.swift in Sources */,
 				CAF59A9F2A7D47BD00813B9C /* ProblemSelectionViewModel.swift in Sources */,
 				CAF59AA52A7EB87300813B9C /* ThumbView.swift in Sources */,
+				CAC7B3922A8004CD0010C4D0 /* CriteriaView.swift in Sources */,
 				CAF59A912A7CD29100813B9C /* Problem.swift in Sources */,
 				CAF59A742A7B8E4900813B9C /* CTAButton.swift in Sources */,
 				CAF59A892A7CBC1400813B9C /* GameView.swift in Sources */,

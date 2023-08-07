@@ -1,3 +1,4 @@
+import BottomSheetSwiftUI
 import Foundation
 
 enum GameStatus {
@@ -39,6 +40,15 @@ enum VerificationResultType {
     case skip
 }
 
+enum Tab: CaseIterable, Identifiable {
+    case criteria
+    case verification
+
+    var id: Self {
+        self
+    }
+}
+
 class GameViewModel: ObservableObject {
     @Published var status: GameStatus = .waitingForOtherUsers
     @Published var stage: Int = -1
@@ -46,8 +56,11 @@ class GameViewModel: ObservableObject {
     @Published var errorMessage: String?
     @Published var problem: Problem?
     @Published var verificationRecord: [[VerificationResultType]] = []
+    @Published var proposalRecord: [Int] = []
     @Published var result: GameResultType = .bothWrong
     @Published var isUserWinner: Bool = false
+    @Published var bottomSheetPosition: BottomSheetPosition = .hidden
+    @Published var selectedTab: Tab = .criteria
     @Default(\.userId) var userId
     private var gameId: Int?
     private var webSocket = WebSocket()
@@ -65,9 +78,13 @@ class GameViewModel: ObservableObject {
         errorMessage: String? = nil,
         problem: Problem? = nil,
         verificationRecord: [[VerificationResultType]] = [],
+        proposalRecord: [Int] = [],
         result: GameResultType = .bothWrong,
         isUserWinner: Bool = false,
-        userId _: Int? = nil, gameId: Int? = nil,
+        bottomSheetPosition: BottomSheetPosition = .hidden,
+        selectedTab: Tab = .criteria,
+        userId _: Int? = nil,
+        gameId: Int? = nil,
         webSocket: WebSocket = WebSocket()
     ) {
         self.status = status
@@ -76,8 +93,11 @@ class GameViewModel: ObservableObject {
         self.errorMessage = errorMessage
         self.problem = problem
         self.verificationRecord = verificationRecord
+        self.proposalRecord = proposalRecord
         self.result = result
         self.isUserWinner = isUserWinner
+        self.bottomSheetPosition = bottomSheetPosition
+        self.selectedTab = selectedTab
         self.gameId = gameId
         self.webSocket = webSocket
     }
@@ -103,10 +123,9 @@ class GameViewModel: ObservableObject {
                 return
             }
         case .failure:
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                if self.status == .result { return }
-                self.showError(message: "Unable to establish a connection.")
-            }
+            if status == .result { return }
+            webSocket.close()
+            showError(message: "Unable to establish a connection.")
         }
     }
 
@@ -146,6 +165,7 @@ class GameViewModel: ObservableObject {
             switch result {
             case let .success(problem):
                 self.problem = problem
+                self.bottomSheetPosition = .dynamicTop
             case .failure:
                 self.showError(message: "Failed to download a problem")
             }
@@ -166,6 +186,7 @@ class GameViewModel: ObservableObject {
                     verificationResult[verifierIndices[idx]] = val ? .correct : .wrong
                 }
                 self.verificationRecord.append(verificationResult)
+                self.proposalRecord.append(proposal)
             case .failure:
                 self.showError(message: "Failed to verify the proposal")
             }
@@ -211,7 +232,8 @@ class GameViewModel: ObservableObject {
     }
 
     func showError(message: String) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            if self.status == .result { return }
             self.isError = true
             self.errorMessage = message
         }
