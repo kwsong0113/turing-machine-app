@@ -55,6 +55,7 @@
 		CA5396922A800A890047BCDB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		CA5396942A8017E90047BCDB /* Int+Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Alphabet.swift"; sourceTree = "<group>"; };
 		CA5396962A8020050047BCDB /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		CA5396982A80A9180047BCDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CAC7B3912A8004CD0010C4D0 /* CriteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaView.swift; sourceTree = "<group>"; };
 		CAF59A4F2A7B713400813B9C /* TuringMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF59A522A7B713400813B9C /* TuringMachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuringMachineApp.swift; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 		CAF59A512A7B713400813B9C /* TuringMachine */ = {
 			isa = PBXGroup;
 			children = (
+				CA5396982A80A9180047BCDB /* Info.plist */,
 				CAF59AAA2A7FC86D00813B9C /* Extensions */,
 				CAF59A6D2A7B818300813B9C /* Services */,
 				CAF59A6C2A7B816E00813B9C /* ViewModels */,
@@ -585,6 +587,8 @@
 				DEVELOPMENT_TEAM = L25PRW3XCF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TuringMachine/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Turing Machine";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -623,6 +627,8 @@
 				DEVELOPMENT_TEAM = L25PRW3XCF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TuringMachine/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Turing Machine";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
