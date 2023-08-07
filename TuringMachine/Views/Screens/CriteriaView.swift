@@ -26,8 +26,12 @@ struct CriteriaView: View {
             } else {
                 ProgressView()
             }
+            Spacer()
+                .listRowSeparator(.hidden, edges: .bottom)
+                .listRowBackground(EmptyView())
         }
         .listStyle(.plain)
+        .background(Color(.systemBackground))
         .enableInjection()
     }
 }

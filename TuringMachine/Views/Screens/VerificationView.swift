@@ -46,6 +46,9 @@ struct VerificationView: View {
                     }
                 }
             }
+            Spacer()
+                .listRowSeparator(.hidden, edges: .bottom)
+                .listRowBackground(EmptyView())
         }
         .listStyle(.plain)
         .enableInjection()
