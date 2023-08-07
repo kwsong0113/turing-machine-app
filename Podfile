@@ -11,5 +11,6 @@ target 'TuringMachine' do
   pod 'InjectHotReload'
   pod 'Alamofire'
   pod 'BottomSheetSwiftUI'
+  pod 'WrappingHStack'
   
 end

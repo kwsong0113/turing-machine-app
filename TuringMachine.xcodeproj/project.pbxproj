@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA3ED7E22A81732A0049FAD9 /* NumberBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3ED7E12A81732A0049FAD9 /* NumberBadge.swift */; };
 		CA5396912A800A670047BCDB /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5396902A800A670047BCDB /* RemoteImage.swift */; };
 		CA5396932A800A890047BCDB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5396922A800A890047BCDB /* ImageCache.swift */; };
 		CA5396952A8017E90047BCDB /* Int+Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5396942A8017E90047BCDB /* Int+Alphabet.swift */; };
@@ -53,6 +54,7 @@
 		04CB4784166E4B9C3DCC71E4 /* Pods-TuringMachine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuringMachine.debug.xcconfig"; path = "Target Support Files/Pods-TuringMachine/Pods-TuringMachine.debug.xcconfig"; sourceTree = "<group>"; };
 		9FB265AE9BDD7CEC2CC2F7E8 /* Pods-TuringMachine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuringMachine.release.xcconfig"; path = "Target Support Files/Pods-TuringMachine/Pods-TuringMachine.release.xcconfig"; sourceTree = "<group>"; };
 		AB96405E94F89CE41C438FFB /* Pods_TuringMachine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuringMachine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3ED7E12A81732A0049FAD9 /* NumberBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberBadge.swift; sourceTree = "<group>"; };
 		CA5396902A800A670047BCDB /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		CA5396922A800A890047BCDB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		CA5396942A8017E90047BCDB /* Int+Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Alphabet.swift"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				CAF59A732A7B8E4900813B9C /* CTAButton.swift */,
 				CAF59AA82A7EC13600813B9C /* ThreeDigitPicker.swift */,
 				CA5396902A800A670047BCDB /* RemoteImage.swift */,
+				CA3ED7E12A81732A0049FAD9 /* NumberBadge.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				CAF59AA32A7D4ECF00813B9C /* QuestionViewModel.swift in Sources */,
 				CAF59A792A7B9DE400813B9C /* RegisterView.swift in Sources */,
 				CAF59A8F2A7CD1D200813B9C /* GameViewModel.swift in Sources */,
+				CA3ED7E22A81732A0049FAD9 /* NumberBadge.swift in Sources */,
 				CAF59A8D2A7CD16900813B9C /* WebSocket.swift in Sources */,
 				CAF59A7D2A7C0F4600813B9C /* NetworkManager.swift in Sources */,
 				CAF59AA92A7EC13600813B9C /* ThreeDigitPicker.swift in Sources */,
