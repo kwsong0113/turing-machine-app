@@ -11,6 +11,8 @@
 		CA5396932A800A890047BCDB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5396922A800A890047BCDB /* ImageCache.swift */; };
 		CA5396952A8017E90047BCDB /* Int+Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5396942A8017E90047BCDB /* Int+Alphabet.swift */; };
 		CA5396972A8020050047BCDB /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5396962A8020050047BCDB /* VerificationView.swift */; };
+		CA73B5432A80B8BB00F41CDC /* Secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA73B5422A80B8BB00F41CDC /* Secret.plist */; };
+		CA73B5452A80B9DF00F41CDC /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73B5442A80B9DF00F41CDC /* Secret.swift */; };
 		CAC7B3922A8004CD0010C4D0 /* CriteriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7B3912A8004CD0010C4D0 /* CriteriaView.swift */; };
 		CAF59A532A7B713400813B9C /* TuringMachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF59A522A7B713400813B9C /* TuringMachineApp.swift */; };
 		CAF59A572A7B713500813B9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF59A562A7B713500813B9C /* Assets.xcassets */; };
@@ -55,6 +57,9 @@
 		CA5396922A800A890047BCDB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		CA5396942A8017E90047BCDB /* Int+Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Alphabet.swift"; sourceTree = "<group>"; };
 		CA5396962A8020050047BCDB /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		CA5396982A80A9180047BCDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CA73B5422A80B8BB00F41CDC /* Secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secret.plist; sourceTree = "<group>"; };
+		CA73B5442A80B9DF00F41CDC /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		CAC7B3912A8004CD0010C4D0 /* CriteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaView.swift; sourceTree = "<group>"; };
 		CAF59A4F2A7B713400813B9C /* TuringMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuringMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF59A522A7B713400813B9C /* TuringMachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuringMachineApp.swift; sourceTree = "<group>"; };
@@ -141,6 +146,8 @@
 		CAF59A512A7B713400813B9C /* TuringMachine */ = {
 			isa = PBXGroup;
 			children = (
+				CA73B5422A80B8BB00F41CDC /* Secret.plist */,
+				CA5396982A80A9180047BCDB /* Info.plist */,
 				CAF59AAA2A7FC86D00813B9C /* Extensions */,
 				CAF59A6D2A7B818300813B9C /* Services */,
 				CAF59A6C2A7B816E00813B9C /* ViewModels */,
@@ -167,6 +174,7 @@
 			children = (
 				CAF59A862A7C310C00813B9C /* Defaults.swift */,
 				CA5396922A800A890047BCDB /* ImageCache.swift */,
+				CA73B5442A80B9DF00F41CDC /* Secret.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA73B5432A80B8BB00F41CDC /* Secret.plist in Resources */,
 				CAF59A5A2A7B713500813B9C /* Preview Assets.xcassets in Resources */,
 				CAF59A572A7B713500813B9C /* Assets.xcassets in Resources */,
 			);
@@ -441,6 +450,7 @@
 				CAF59A7F2A7C16F500813B9C /* Error.swift in Sources */,
 				CAF59A532A7B713400813B9C /* TuringMachineApp.swift in Sources */,
 				CAF59AA12A7D4E7E00813B9C /* QuestionView.swift in Sources */,
+				CA73B5452A80B9DF00F41CDC /* Secret.swift in Sources */,
 				CAF59AAC2A7FC87C00813B9C /* Array+Safe.swift in Sources */,
 				CAF59A872A7C310C00813B9C /* Defaults.swift in Sources */,
 				CAF59A972A7D159F00813B9C /* Game.swift in Sources */,
@@ -585,6 +595,8 @@
 				DEVELOPMENT_TEAM = L25PRW3XCF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TuringMachine/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Turing Machine";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -623,6 +635,8 @@
 				DEVELOPMENT_TEAM = L25PRW3XCF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TuringMachine/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Turing Machine";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

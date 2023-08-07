@@ -5,5 +5,5 @@ protocol Serviceable {
 }
 
 extension Serviceable {
-    var baseUrl: String { (ProcessInfo.processInfo.environment["API_ENDPOINT_URL"] ?? "") + url }
+    var baseUrl: String { Secret.apiEndpointURL + url }
 }
