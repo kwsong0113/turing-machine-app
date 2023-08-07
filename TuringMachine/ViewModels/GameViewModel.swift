@@ -56,6 +56,7 @@ class GameViewModel: ObservableObject {
     @Published var errorMessage: String?
     @Published var problem: Problem?
     @Published var verificationRecord: [[VerificationResultType]] = []
+    @Published var proposalRecord: [Int] = []
     @Published var result: GameResultType = .bothWrong
     @Published var isUserWinner: Bool = false
     @Published var bottomSheetPosition: BottomSheetPosition = .hidden
@@ -77,6 +78,7 @@ class GameViewModel: ObservableObject {
         errorMessage: String? = nil,
         problem: Problem? = nil,
         verificationRecord: [[VerificationResultType]] = [],
+        proposalRecord: [Int] = [],
         result: GameResultType = .bothWrong,
         isUserWinner: Bool = false,
         bottomSheetPosition: BottomSheetPosition = .hidden,
@@ -91,6 +93,7 @@ class GameViewModel: ObservableObject {
         self.errorMessage = errorMessage
         self.problem = problem
         self.verificationRecord = verificationRecord
+        self.proposalRecord = proposalRecord
         self.result = result
         self.isUserWinner = isUserWinner
         self.bottomSheetPosition = bottomSheetPosition
@@ -120,10 +123,9 @@ class GameViewModel: ObservableObject {
                 return
             }
         case .failure:
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                if self.status == .result { return }
-                self.showError(message: "Unable to establish a connection.")
-            }
+            if status == .result { return }
+            webSocket.close()
+            showError(message: "Unable to establish a connection.")
         }
     }
 
@@ -184,6 +186,7 @@ class GameViewModel: ObservableObject {
                     verificationResult[verifierIndices[idx]] = val ? .correct : .wrong
                 }
                 self.verificationRecord.append(verificationResult)
+                self.proposalRecord.append(proposal)
             case .failure:
                 self.showError(message: "Failed to verify the proposal")
             }
@@ -229,7 +232,8 @@ class GameViewModel: ObservableObject {
     }
 
     func showError(message: String) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            if self.status == .result { return }
             self.isError = true
             self.errorMessage = message
         }

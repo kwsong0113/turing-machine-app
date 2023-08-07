@@ -66,12 +66,17 @@ struct GameView: View {
                         }
                     }
                     .pickerStyle(.segmented)
-                    Divider().padding(.top, 10)
+                    Divider().padding(EdgeInsets(top: 10, leading: -20, bottom: 0, trailing: -20))
                 }
                 .padding([.horizontal])
             },
             mainContent: {
-                CriteriaView()
+                switch viewModel.selectedTab {
+                case .criteria:
+                    CriteriaView()
+                case .verification:
+                    VerificationView()
+                }
             }
         )
         .alert("Error", isPresented: $viewModel.isError, actions: {

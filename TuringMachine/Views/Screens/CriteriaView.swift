@@ -10,10 +10,10 @@ struct CriteriaView: View {
             if let problem = viewModel.problem {
                 ForEach(Array(zip(problem.verifiers.indices, problem.verifiers)), id: \.0) { index, item in
                     HStack {
-                        Text(index.toAlphabet())
-                            .foregroundColor(.white)
-                            .frame(width: 28, height: 28)
-                            .background(RoundedRectangle(cornerRadius: 8).fill(Color("Primary")))
+                        Image(systemName: "\(index.toAlphabet().lowercased()).square.fill")
+                            .foregroundColor(.blue)
+                            .font(.title3)
+
                         Spacer(minLength: 20)
                         RemoteImage(url: """
                         https://turingmachine.info/images/criteriacards/\
