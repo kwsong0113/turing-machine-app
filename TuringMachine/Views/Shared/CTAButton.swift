@@ -16,7 +16,7 @@ struct CTAButton: View {
                     .frame(maxWidth: .infinity)
                     .controlSize(.regular)
             } else {
-                Text(title)
+                Text("**\(title)**")
                     .frame(maxWidth: .infinity)
             }
         }

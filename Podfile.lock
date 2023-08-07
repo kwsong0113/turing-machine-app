@@ -4,6 +4,7 @@ PODS:
   - InjectHotReload (1.2.2)
   - SwiftFormat/CLI (0.51.13)
   - SwiftLint (0.52.4)
+  - WrappingHStack (2.2.10)
 
 DEPENDENCIES:
   - Alamofire
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - InjectHotReload
   - SwiftFormat/CLI (~> 0.49)
   - SwiftLint
+  - WrappingHStack
 
 SPEC REPOS:
   trunk:
@@ -19,6 +21,7 @@ SPEC REPOS:
     - InjectHotReload
     - SwiftFormat
     - SwiftLint
+    - WrappingHStack
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
@@ -26,7 +29,8 @@ SPEC CHECKSUMS:
   InjectHotReload: e524b7c46ec063d84e407e65df5fe251cde19b32
   SwiftFormat: f4c21fdf8aacdd2db6ffe110f939e0548c9a7de3
   SwiftLint: 1cc5cd61ba9bacb2194e340aeb47a2a37fda00b3
+  WrappingHStack: f784737f5707f8fea91b687074530dbefd2dbf05
 
-PODFILE CHECKSUM: 1bf35b7564d090a5158e258670974a093d44d577
+PODFILE CHECKSUM: 2af91d01f9f1dd837544e47b464a3c7c9bb9ae54
 
 COCOAPODS: 1.12.1
