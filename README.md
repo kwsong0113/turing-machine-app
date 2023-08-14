@@ -55,3 +55,7 @@ At `TuringMachine/secret.plist`
 
 - `WEBSOCKET_ENDPOINT_URL` - ws://...
 - `API_ENDPOINT_URL` - http://... or https://...
+
+## License
+
+This project is licensed under the terms of the MIT license.
