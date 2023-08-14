@@ -1,3 +1,4 @@
+<br/>
 <div align="center">
   <a href="https://github.com/kwsong0113/turing-machine-app">
     <img src="https://github.com/kwsong0113/turing-machine-app/assets/53707540/81923c1d-9867-4d37-a482-799dfd5c3be6" alt="Logo" width="80" height="80">
@@ -23,8 +24,9 @@
 This project brings [Turing Machine game](https://www.scorpionmasque.com/en/turingmachine) - a competitive deduction board game where players strive to decipher a hidden code by skillfully interacting with a proto-computer - to your iOS device. It addresses the inconvenience of setting up the complex board game with many cards and sheets by simulating the game's components and mechanics within the app. Players can enjoy engaging in the game with others in real-time, facilitated by the [server](https://github.com/kwsong0113/turing-machine-api).
 
 ## Demo
-
-https://github.com/kwsong0113/turing-machine-app/assets/53707540/054f4be6-44b6-48e5-8744-a9ecbccd0d2f
+<div align="center">
+  <img src="https://github.com/kwsong0113/turing-machine-app/assets/53707540/054f4be6-44b6-48e5-8744-a9ecbccd0d2f" width="300" />
+</div>
 
 ## Built With
 
