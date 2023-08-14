@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:ci_scripts">
+   </FileRef>
+   <FileRef
       location = "group:TuringMachine.xcodeproj">
    </FileRef>
    <FileRef
